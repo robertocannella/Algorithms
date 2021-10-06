@@ -11,9 +11,11 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        int[] arr = {1,2,3,4,5};
-        List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
-        System.out.println(WarmUp.simpleArraySum(list));
+        int[] arr1 = {1,2,3};
+        int[] arr2 = {3,2,1};
+        List<Integer> list1 = Arrays.stream(arr1).boxed().collect(Collectors.toList());
+        List<Integer> list2 = Arrays.stream(arr2).boxed().collect(Collectors.toList());
+        System.out.println(WarmUp.compareTriplets(list1, list2));
 
     }
 }
