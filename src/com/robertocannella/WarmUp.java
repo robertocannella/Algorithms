@@ -1,13 +1,8 @@
 package com.robertocannella;
 // HackerRank exercises
-import javax.imageio.ImageTranscoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 public class WarmUp {
 
@@ -15,10 +10,12 @@ public class WarmUp {
         // the matrix can be any size.
         int sumUp = 0;
         int sumDn = 0;
-        for (int i = 0; i < arr.size(); i++) {
-            sumUp = (arr.get(0).get(2)+arr.get(1).get(1)+arr.get(2).get(0));
-            sumDn = (arr.get(0).get(0)+arr.get(1).get(1)+arr.get(2).get(2));
+
+        for (int i = 0, j = arr.size()-1; i < arr.size() && j >= 0; i++, j--){
+            sumUp += arr.get(i).get(i);
+            sumDn += arr.get(i).get(j);
         }
+
         return Math.abs(sumUp - sumDn);
     }
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
