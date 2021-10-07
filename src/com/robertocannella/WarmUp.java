@@ -1,5 +1,8 @@
 package com.robertocannella;
 // HackerRank exercises
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +10,27 @@ import java.util.Random;
 
 public class WarmUp {
     public static void plusMinus(List<Integer> arr) {
-        // Write your code here
+        // Print the following  lines, each to  decimals:
+
+        //proportion of positive values
+        //proportion of negative values
+        //proportion of zeros
+
+        List<Double> results = new ArrayList<>(Arrays.asList(0.00,0.00,0.00));
+
+        double positives = 0;
+        double negatives = 0;
+        double zeros = 0;
+        for (int integer : arr) {
+            if (integer > 0)
+                results.set(0, ++positives);
+            else if (integer < 0)
+                results.set(1, (++negatives));
+            else
+                results.set(2, ++zeros);
+        }
+        for(double result : results)
+            System.out.printf("%.6f%n", result/arr.size());
 
     }
     public static List<List<Integer>> generateRandomMatrix(int size){

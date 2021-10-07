@@ -1,17 +1,13 @@
 package com.robertocannella;
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        var matrix = WarmUp.generateRandomMatrix(4);
-
-        for(var list: matrix)
-            System.out.println(list);
-        System.out.println(WarmUp.diagonalDifference(matrix));
-
+        int[] array = {-4, 3, -9, 0, 4, 1};
+        List<Integer> list1 = Arrays.stream(array).boxed().collect(Collectors.toList());
+        WarmUp.plusMinus(list1);
     }
 }
