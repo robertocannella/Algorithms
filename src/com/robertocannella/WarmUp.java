@@ -3,9 +3,26 @@ package com.robertocannella;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class WarmUp {
+    public static void plusMinus(List<Integer> arr) {
+        // Write your code here
 
+    }
+    public static List<List<Integer>> generateRandomMatrix(int size){
+        List<List<Integer>> matrix = new ArrayList<>();
+
+        Random r=new Random();
+
+        for (int i = 0;i < size; i++) {
+            matrix.add(new ArrayList<>());
+                for (int j = 0; j < size; j++) {
+                    matrix.get(i).add(r.nextInt( 100+100) - 100);
+                }
+        }
+        return matrix;
+    }
     public static int diagonalDifference(List<List<Integer>> arr) {
         // the matrix can be any size.
         int sumUp = 0;
