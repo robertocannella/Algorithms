@@ -1,14 +1,18 @@
 package com.robertocannella;
 // HackerRank exercises
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class WarmUp {
+    public static void staircase(int n) {
+            var spaceCount = n-1;
+            for (int i = 1; i <=n ; i++) {
+                System.out.printf(" ".repeat(spaceCount)+ "#".repeat(i) + "\n");
+                spaceCount--;
+            }
+    }
     public static void plusMinus(List<Integer> arr) {
         // Print the following  lines, each to  decimals:
 
