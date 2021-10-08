@@ -4,7 +4,10 @@ package com.robertocannella;
 import java.util.*;
 
 public class WarmUp {
-
+    public static int birthdayCakeCandles(List<Integer> candles) {
+        // Write your code here
+        return 0;
+    }
     public static void miniMaxSum(List<Integer> arr) {
         Collections.sort(arr);
         long maxSum;

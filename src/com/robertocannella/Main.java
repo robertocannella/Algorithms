@@ -1,22 +1,20 @@
 package com.robertocannella;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-
-        Random r=new Random();
-        int size = 5;
-
-            for (int j = 0; j < size; j++) {
-                list.add(Math.abs(r.nextInt(1000000000)));
-            }
-
-
-        WarmUp.miniMaxSum(list);
-
+        String stringInput;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            stringInput = br.readLine();
+            System.out.println("Hello, World.");
+            System.out.println(stringInput);
+        } catch (IOException ioe) {
+            System.out.println(ioe);
+        }
     }
 }
