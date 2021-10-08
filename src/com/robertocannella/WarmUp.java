@@ -6,7 +6,24 @@ import java.util.*;
 public class WarmUp {
     public static int birthdayCakeCandles(List<Integer> candles) {
         // Write your code here
-        return 0;
+
+        Collections.sort(candles);
+        int size=candles.size()-1;
+
+        int currentCandle = candles.get(size);
+        int previousCandle = candles.get(size-1);
+        int count = 1;
+
+        while (currentCandle == previousCandle)
+        {
+            count++;
+            if (count == size+1)
+                break;
+
+            currentCandle = previousCandle;
+            previousCandle = candles.get(size-count);
+        }
+        return count;
     }
     public static void miniMaxSum(List<Integer> arr) {
         Collections.sort(arr);
