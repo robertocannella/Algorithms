@@ -1,11 +1,22 @@
 package com.robertocannella;
 // HackerRank exercises
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+
+import java.util.*;
 
 public class WarmUp {
+
+    public static void miniMaxSum(List<Integer> arr) {
+        Collections.sort(arr);
+        long maxSum;
+        long minSum;
+        long base = 0;
+        for (var i = 1; i < 4; i++)
+            base += arr.get(i);
+
+        minSum = base + arr.get(0);
+        maxSum = base + arr.get(4);
+        System.out.printf(minSum + " " + maxSum);
+    }
     public static void staircase(int n) {
             var spaceCount = n-1;
             for (int i = 1; i <=n ; i++) {
