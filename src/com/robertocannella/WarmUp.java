@@ -1,12 +1,36 @@
 package com.robertocannella;
 // HackerRank exercises
 
+import java.io.PrintStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class WarmUp {
-    public static int birthdayCakeCandles(List<Integer> candles) {
-        // Write your code here
+    public static String timeConversion(String s) {
 
+            //String input = "23/12/2014 10:22:12 PM";
+            //Format of the date defined in the input String
+            DateFormat df = new SimpleDateFormat("hh:mm:ssaa");
+            //Desired format: 24 hour format: Change the pattern as per the need
+            DateFormat outputformat = new SimpleDateFormat("HH:mm:ss");
+            Date date;
+            String output = null;
+            try{
+                //Converting the input String to Date
+                date= df.parse(s);
+                //Changing the format of date and storing it in String
+                output = outputformat.format(date);
+                //Displaying the date
+            }catch(ParseException pe){
+                pe.printStackTrace();
+            }
+            return output;
+
+    }
+
+    public static int birthdayCakeCandles(List<Integer> candles) {
         Collections.sort(candles);
         int size=candles.size()-1;
 
@@ -20,7 +44,6 @@ public class WarmUp {
             if (count == size+1)
                 break;
 
-            currentCandle = previousCandle;
             previousCandle = candles.get(size-count);
         }
         return count;

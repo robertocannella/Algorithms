@@ -1,23 +1,19 @@
 package com.robertocannella;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
+    public static void main(String[] args)  {
 
-        Random r=new Random();
-        //generate random list
-        int size = 5;
-        int bound = 10;
+        Date date = new Date();
 
-        for (int j = 0; j < size; j++) {
-            list.add(Math.abs(r.nextInt(bound)));
-        }
-        System.out.println(WarmUp.birthdayCakeCandles(list));
-        System.out.println(list);
+        var item = WarmUp.timeConversion("11:05:45PM");
+        System.out.println(item);
+
     }
 }
