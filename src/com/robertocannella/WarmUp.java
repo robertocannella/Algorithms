@@ -1,13 +1,20 @@
 package com.robertocannella;
 // HackerRank exercises
 
-import java.io.PrintStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class WarmUp {
+    public static long aVeryBigSum(List<Long> ar) {
+        long sum =0;
+        for (Long aLong : ar) {
+            sum += aLong;
+        }
+        return sum;
+    }
+
     public static String timeConversion(String s) {
 
             //String input = "23/12/2014 10:22:12 PM";
@@ -29,7 +36,6 @@ public class WarmUp {
             return output;
 
     }
-
     public static int birthdayCakeCandles(List<Integer> candles) {
         Collections.sort(candles);
         int size=candles.size()-1;
@@ -58,12 +64,12 @@ public class WarmUp {
 
         minSum = base + arr.get(0);
         maxSum = base + arr.get(4);
-        System.out.printf(minSum + " " + maxSum);
+        System.out.print(minSum + " " + maxSum);
     }
     public static void staircase(int n) {
             var spaceCount = n-1;
             for (int i = 1; i <=n ; i++) {
-                System.out.printf(" ".repeat(spaceCount)+ "#".repeat(i) + "\n");
+                System.out.print(" ".repeat(spaceCount)+ "#".repeat(i) + "\n");
                 spaceCount--;
             }
     }

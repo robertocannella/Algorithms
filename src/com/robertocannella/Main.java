@@ -10,10 +10,21 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        Date date = new Date();
+        List<Integer> integers = new ArrayList<>();
+        List<Long> longs = new ArrayList<>();
 
-        var item = WarmUp.timeConversion("11:05:45PM");
+        Random r=new Random();
+        //generate random list
+        int size = 10;
+
+        for (int j = 0; j < size; j++) {
+            integers.add(r.nextInt());
+        }
+        for(int number: integers)
+            longs.add((long) number);
+
+        var item = WarmUp.aVeryBigSum(longs);
+        System.out.println(longs);
         System.out.println(item);
-
     }
 }
