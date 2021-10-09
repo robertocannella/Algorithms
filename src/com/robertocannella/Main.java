@@ -9,21 +9,23 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        List<Integer> list = new ArrayList<>();
-
+        List<Integer> apples = new ArrayList<>();
+        List<Integer> oranges = new ArrayList<>();
         Random r=new Random();
-        //generate random list
-        int size = 5;
 
-        for (int j = 0; j < size; j++)
-            list.add(r.nextInt(100));
+        int totalApples = 5;
+        int totalOranges = 5;
+        // set range of 30 integers beginning at -10
+        for (int i = 0; i < totalApples; i++) {
+            apples.add(r.nextInt(30)-10);
+        }
+        for (int i = 0; i < totalOranges; i++) {
+            oranges.add(r.nextInt(30)-10);
+        }
 
-
-
-        System.out.println(list);
-        var item = Implementation.gradingStudents(list);
-        System.out.println(item);
-
+        Implementation.countApplesAndOranges(2,15,5,15,apples,oranges);
+        System.out.println(apples);
+        System.out.println(oranges);
 
     }
 }
