@@ -4,12 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Implementation {
-    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
-        // Write your code here
-        int edgeOne = s;
-        int edgeTwo = t;
-        int appleTree = a;
-        int orangeTree = b;
+    public static String kangaroo(int kangOneStartX, int kangOneVel, int kangTwoStartX, int kangTwoVel) {
+        // Constraints
+        // 0 < kangOne < kangTwo < 10000
+        long jumps = 1;
+        int kangOneCurrentPoint = (kangOneStartX + kangOneVel);
+        int kangTwoCurrentPoint = (kangTwoStartX + kangTwoVel);
+
+        if (kangTwoVel > kangOneVel && kangTwoCurrentPoint > kangOneCurrentPoint)
+            return "NO KangTwo is ahead with higher velocity";
+        if(kangOneVel > kangTwoVel && kangOneCurrentPoint > kangTwoCurrentPoint)
+            return "NO KangOne is ahead with faster velocity";
+
+        while (kangOneCurrentPoint < kangTwoCurrentPoint) {
+            jumps++;
+            kangOneCurrentPoint += kangOneVel;
+            kangTwoCurrentPoint += kangTwoVel;
+        }
+
+        if (kangOneCurrentPoint == kangTwoCurrentPoint)
+            return "YES: Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
+
+        return "NO Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
+    }
+    public static void countApplesAndOranges(int edgeOne, int edgeTwo, int appleTree, int orangeTree, List<Integer> apples, List<Integer> oranges) {
         int appleCount = 0;
         int orangeCount = 0;
 
