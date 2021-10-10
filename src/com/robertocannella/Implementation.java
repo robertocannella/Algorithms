@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Implementation {
+    public static int getTotalX(List<Integer> a, List<Integer> b) {
+        // Write your code here
+        System.out.println(a);
+        System.out.println(b);
+        return 0;
+    }
     public static String kangaroo(int kangOneStartX, int kangOneVel, int kangTwoStartX, int kangTwoVel) {
 
         // Possible Solution to solve for y (point where kangaroos meet)
