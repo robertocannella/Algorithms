@@ -1,14 +1,64 @@
 package com.robertocannella;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.management.InstanceNotFoundException;
+import javax.sound.sampled.EnumControl;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.jar.JarOutputStream;
+import java.util.stream.Stream;
 
 public class Implementation {
     public static int getTotalX(List<Integer> a, List<Integer> b) {
-        // Write your code here
-        System.out.println(a);
-        System.out.println(b);
-        return 0;
+        //The elements of the first array are all factors of the integer being considered
+        //The integer being considered is a factor of all elements of the second array
+        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> invalidIntegers = new HashSet<>();
+
+        for (int number: a)
+            set.addAll(getFactors(number));
+        for(int number: b)
+            set.addAll(getFactors(number));
+
+        // check if current array item is a factor of the integer being considered
+        for (int factor: set) {
+            for (Integer integer : a)
+                if (factor % integer != 0)
+                    invalidIntegers.add(factor);
+
+            for (Integer integer : b)
+                if (integer % factor != 0)
+                    invalidIntegers.add(factor);
+        }
+
+        set.removeAll(invalidIntegers);
+
+        System.out.println(set);
+        System.out.println(invalidIntegers);
+
+        return set.size();
+    }
+    private static int getProduct(List<Integer> list){
+        int product = 1;
+        for (Integer integer : list) {
+            product *= integer;
+        }
+        return product;
+    }
+
+    private static List<Integer> getFactors(int n){
+        List<Integer> v = new Vector<>();
+        for (int i=1; i<=Math.sqrt(n); i++)
+        {
+            if (n%i==0)
+            {
+                if (n/i == i)
+                    v.add(i);
+                else
+                    v.addAll(Arrays.asList(i, (n/i)));
+            }
+        }
+        Collections.sort(v);
+        return v;
     }
     public static String kangaroo(int kangOneStartX, int kangOneVel, int kangTwoStartX, int kangTwoVel) {
 
