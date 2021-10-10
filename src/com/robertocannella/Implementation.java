@@ -6,7 +6,7 @@ import java.util.List;
 public class Implementation {
     public static String kangaroo(int kangOneStartX, int kangOneVel, int kangTwoStartX, int kangTwoVel) {
 
-        // New Solution to solve for y (point where kangaroos meet)
+        // Possible Solution to solve for y (point where kangaroos meet)
         // x1 + (y * v1) = x2 + (y * v2) =>
         // (x1 - x2) + y(v1 -v2) = 0 =>
         // (x1 - x2) = -y(v1 - v2) =>
@@ -15,33 +15,36 @@ public class Implementation {
         // (x2 - x1) / (v1 - v2) = y
         // if = 0, kangaroos will meet
 
-        if ((kangTwoStartX-kangOneStartX)%(kangOneVel-kangTwoVel) == 0)
-            return "YES";
 
-        return "NO";
+//        if ((kangTwoStartX-kangOneStartX)%(kangOneVel-kangTwoVel) == 0)
+//            return "YES";
+//
+//        return "NO";
 
         // ----Old Solution --- //
         // Constraints
         // 0 < kangOne < kangTwo < 10000
-//        long jumps = 1;
-//        int kangOneCurrentPoint = (kangOneStartX + kangOneVel);
-//        int kangTwoCurrentPoint = (kangTwoStartX + kangTwoVel);
-//
-//        if (kangTwoVel > kangOneVel && kangTwoCurrentPoint > kangOneCurrentPoint)
-//            return "NO KangTwo is ahead with higher velocity";
-//        if(kangOneVel > kangTwoVel && kangOneCurrentPoint > kangTwoCurrentPoint)
-//            return "NO KangOne is ahead with faster velocity";
-//
-//        while (kangOneCurrentPoint < kangTwoCurrentPoint) {
-//            jumps++;
-//            kangOneCurrentPoint += kangOneVel;
-//            kangTwoCurrentPoint += kangTwoVel;
-//        }
-//
-//        if (kangOneCurrentPoint == kangTwoCurrentPoint)
-//            return "YES: Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
-//
-//        return "NO Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
+        long jumps = 1;
+        int kangOneCurrentPoint = (kangOneStartX + kangOneVel);
+        int kangTwoCurrentPoint = (kangTwoStartX + kangTwoVel);
+
+        if (kangTwoVel > kangOneVel && kangTwoCurrentPoint > kangOneCurrentPoint)
+            return "NO KangTwo is ahead with higher velocity";
+        if(kangOneVel > kangTwoVel && kangOneCurrentPoint > kangTwoCurrentPoint)
+            return "NO KangOne is ahead with faster velocity";
+        if(kangOneVel == kangTwoVel)
+            return "N0 Kangaroos have the same velocity and will never meet up";
+
+        while (kangOneCurrentPoint < kangTwoCurrentPoint) {
+            jumps++;
+            kangOneCurrentPoint += kangOneVel;
+            kangTwoCurrentPoint += kangTwoVel;
+        }
+
+        if (kangOneCurrentPoint == kangTwoCurrentPoint)
+            return "YES: Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
+
+        return "NO Total jumps: " + jumps + " | k1 location: " +kangOneCurrentPoint+ " | k2 location: " +kangTwoCurrentPoint;
     }
     public static void countApplesAndOranges(int edgeOne, int edgeTwo, int appleTree, int orangeTree, List<Integer> apples, List<Integer> oranges) {
         int appleCount = 0;
