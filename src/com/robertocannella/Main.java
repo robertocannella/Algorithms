@@ -8,11 +8,14 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        //List<Integer> a = new ArrayList<>(Arrays.asList(3, 4, 21, 36, 10, 28, 35, 5, 24, 42));
-        //List<Integer> a = new ArrayList<>(Arrays.asList(12,24,10,24));
-        List<Integer> a = new ArrayList<>(Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1));
 
-        List<Integer> result = Implementation.breakingRecords(a);
+       //List<Integer> s = new ArrayList<>(Arrays.asList(2,2,1,3,2));
+
+       //List<Integer> s = new ArrayList<>(Arrays.asList(1,1,1,1,1));
+       List<Integer> s = new ArrayList<>(Arrays.asList(1, 2, 1, 3, 2));
+       //List<Integer> s = new ArrayList<>(Arrays.asList(4));
+
+        int result = Implementation.birthday(s,3,2);
         System.out.println(result);
 
     }

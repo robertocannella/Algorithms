@@ -3,6 +3,35 @@ package com.robertocannella;
 import java.util.*;
 
 public class Implementation {
+    public static int birthday(List<Integer> arr, int sum, int contLength) {
+        // find a sum in contiguous arrays up to length
+        // example
+        // sum - 4  contLength = 2
+        //
+        //  2  2  1  3  2
+        // [2 +2] 1  3  2  *
+        //  2 [2 +1] 3  2
+        //  2  2 [1 +3] 2  *
+        //  2  2  1 [3 +2]
+        // return total    2
+
+        System.out.println(arr);
+        System.out.println(arr.size()/contLength);
+        int len;
+        int totalMatches =0;
+        int parseSize = (arr.size()-contLength)+1;
+
+        for (int i = 0; i < parseSize; i++) {
+            len = 0;
+            for (int j = 0; j < contLength; j++) {
+                len += arr.get(j+i);
+            }
+            if (sum == len)
+                totalMatches++;
+        }
+        return totalMatches;
+
+    }
     public static List<Integer> breakingRecords(List<Integer> scores) {
         // Write your code here
         List<Integer> results = new ArrayList<>();
