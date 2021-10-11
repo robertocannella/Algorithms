@@ -3,16 +3,22 @@ package com.robertocannella;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args)  {
 
-        List<Integer> s = new ArrayList<>(Arrays.asList(1, 3, 2, 6, 1, 2));
+        List<Integer> s = new ArrayList<>();
+        Random r = new Random();
+        int size = 10;
+        for (int i = 0; i < size; i++) {
+            s.add(r.nextInt(5) +1);
+        }
 
-
-        int result = Implementation.divisibleSumPairs(6,3,s);
+        int result = Implementation.migratoryBirds(s);
         System.out.println(result);
+        System.out.println(s);
 
     }
 }

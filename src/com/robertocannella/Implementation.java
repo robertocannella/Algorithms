@@ -1,26 +1,40 @@
 package com.robertocannella;
 
-import javax.sound.midi.Soundbank;
-import javax.swing.text.Style;
-import java.sql.SQLOutput;
+import java.security.Key;
 import java.util.*;
 
 public class Implementation {
+    public static int migratoryBirds(List<Integer> arr) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int number : arr){
+            if (map.containsKey(number))
+                map.put(number, map.get(number)+1);
+            else
+                map.put(number, 1);
+        }
+
+        int key = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+        System.out.println(map);
+        return key;
+    }
     public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
 
         /// O(n+k)
         Queue<Integer> queue = new ArrayDeque<>(ar);
 
-            int[] a = new int[k];
+            int[] bucket = new int[k];
             int count = 0;
             for(int a_i=0; a_i < n; a_i++){
                 int number = queue.remove();
-                number = number % k;
-                int complement = number == 0 ? k : number;
-                count += a[k-complement];
-                a[number] += 1;
+                System.out.println("number: " + number);
+                number = number % k;                       // set number to mod of k
+                System.out.println("number: " + number);
+                int complement = number == 0 ? k : number; // i
+                count += bucket[k-complement];
+                bucket[number] += 1;
             }
-
+             System.out.println(Arrays.toString(bucket));
             return count;
 
         /// old solution
@@ -34,7 +48,6 @@ public class Implementation {
 //
 //        return count;
     }
-
     public static int birthday(List<Integer> arr, int sum, int contLength) {
         // find a sum in contiguous arrays up to length
         // example
@@ -127,7 +140,6 @@ public class Implementation {
         }
         return product;
     }
-
     private static List<Integer> getFactors(int n){
         List<Integer> v = new Vector<>();
         for (int i=1; i<=Math.sqrt(n); i++)
