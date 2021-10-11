@@ -8,14 +8,31 @@ import java.util.*;
 public class Implementation {
     public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
 
-        int count=0;
+        /// O(n+k)
+        Queue<Integer> queue = new ArrayDeque<>(ar);
 
-        for (int i = 0; i < ar.size(); i++)
-            for (int j = i; j < ar.size(); j++)
-                if ((ar.get(i)+ar.get(j))%k==0 && j!=i)
-                    count++;
+            int[] a = new int[k];
+            int count = 0;
+            for(int a_i=0; a_i < n; a_i++){
+                int number = queue.remove();
+                number = number % k;
+                int complement = number == 0 ? k : number;
+                count += a[k-complement];
+                a[number] += 1;
+            }
 
-        return count;
+            return count;
+
+        /// old solution
+
+//        int count=0;
+//
+//        for (int i = 0; i < ar.size(); i++)
+//            for (int j = i; j < ar.size(); j++)
+//                if ((ar.get(i)+ar.get(j))%k==0 && j!=i)
+//                    count++;
+//
+//        return count;
     }
 
     public static int birthday(List<Integer> arr, int sum, int contLength) {
