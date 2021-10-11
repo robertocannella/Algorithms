@@ -1,13 +1,35 @@
 package com.robertocannella;
 
-import javax.management.InstanceNotFoundException;
-import javax.sound.sampled.EnumControl;
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.jar.JarOutputStream;
-import java.util.stream.Stream;
 
 public class Implementation {
+    public static List<Integer> breakingRecords(List<Integer> scores) {
+        // Write your code here
+        List<Integer> results = new ArrayList<>();
+        HashSet<Integer> highScores = new HashSet<>();
+        HashSet<Integer> lowScores = new HashSet<>();
+        int currentScore = scores.get(0);
+        int currentHighScore = currentScore;
+        int currentLowScore = currentScore;
+
+        int size = 0;
+        while (size != scores.size()){
+            currentScore = scores.get(size);
+            if (currentScore > currentHighScore) {
+                highScores.add(currentScore);
+                currentHighScore = currentScore;
+            }
+            if (currentScore < currentLowScore) {
+                lowScores.add(currentScore);
+                currentLowScore = currentScore;
+            }
+            size++;
+        }
+        results.add(0,highScores.size());
+        results.add(1,lowScores.size());
+
+        return results;
+    }
     public static int getTotalX(List<Integer> a, List<Integer> b) {
         //The elements of the first array are all factors of the integer being considered
         //The integer being considered is a factor of all elements of the second array
