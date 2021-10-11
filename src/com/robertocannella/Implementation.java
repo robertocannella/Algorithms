@@ -1,8 +1,23 @@
 package com.robertocannella;
 
+import javax.sound.midi.Soundbank;
+import javax.swing.text.Style;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Implementation {
+    public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+
+        int count=0;
+
+        for (int i = 0; i < ar.size(); i++)
+            for (int j = i; j < ar.size(); j++)
+                if ((ar.get(i)+ar.get(j))%k==0 && j!=i)
+                    count++;
+
+        return count;
+    }
+
     public static int birthday(List<Integer> arr, int sum, int contLength) {
         // find a sum in contiguous arrays up to length
         // example

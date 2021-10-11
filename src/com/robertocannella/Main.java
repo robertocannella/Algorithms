@@ -8,14 +8,10 @@ public class Main {
 
     public static void main(String[] args)  {
 
+        List<Integer> s = new ArrayList<>(Arrays.asList(1, 3, 2, 6, 1, 2));
 
-       //List<Integer> s = new ArrayList<>(Arrays.asList(2,2,1,3,2));
 
-       //List<Integer> s = new ArrayList<>(Arrays.asList(1,1,1,1,1));
-       List<Integer> s = new ArrayList<>(Arrays.asList(1, 2, 1, 3, 2));
-       //List<Integer> s = new ArrayList<>(Arrays.asList(4));
-
-        int result = Implementation.birthday(s,3,2);
+        int result = Implementation.divisibleSumPairs(6,3,s);
         System.out.println(result);
 
     }
