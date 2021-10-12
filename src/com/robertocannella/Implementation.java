@@ -11,21 +11,21 @@ public class Implementation {
     public static String dayOfProgrammer(int year) throws ParseException {
         int days = 243;
         if (year >= 1700 && year <= 1917) {
-            System.out.println("Julian Calendar");
+            //System.out.println("Julian Calendar");
             if (year%4 == 0) {
-                System.out.println("Leap Year");
+               // System.out.println("Leap Year");
                 days += 1;
             }
         }
         else if (year >= 1919) {
-            System.out.println("Gregorian Calendar");
+            //System.out.println("Gregorian Calendar");
             if (year%400 == 0 || year%4 == 0 && year%100 != 0) {
-                System.out.println("Leap Year");
+               // System.out.println("Leap Year");
                 days += 1;
             }
         }
         else {
-            System.out.println("1918");
+            //System.out.println("1918");
             days -= 13;
         }
 
