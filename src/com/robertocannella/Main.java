@@ -1,24 +1,21 @@
 package com.robertocannella;
 
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws ParseException {
 
-        List<Integer> s = new ArrayList<>();
         Random r = new Random();
-        int size = 10;
-        for (int i = 0; i < size; i++) {
-            s.add(r.nextInt(5) +1);
-        }
+        // random r.nextInt(upperBound-lowerBound)+ lowerBound;
+        int year = r.nextInt(2701-1700)+1700;
+        String day = Implementation.dayOfProgrammer(year);
+        System.out.println(day);
 
-        int result = Implementation.migratoryBirds(s);
-        System.out.println(result);
-        System.out.println(s);
+
 
     }
 }

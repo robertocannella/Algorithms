@@ -1,9 +1,37 @@
 package com.robertocannella;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.security.Key;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Implementation {
+    public static String dayOfProgrammer(int year) throws ParseException {
+        int days = 243;
+        if (year >= 1700 && year <= 1917) {
+            System.out.println("Julian Calendar");
+            if (year%4 == 0) {
+                System.out.println("Leap Year");
+                days += 1;
+            }
+        }
+        else if (year >= 1919) {
+            System.out.println("Gregorian Calendar");
+            if (year%400 == 0 || year%4 == 0 && year%100 != 0) {
+                System.out.println("Leap Year");
+                days += 1;
+            }
+        }
+        else {
+            System.out.println("1918");
+            days -= 13;
+        }
+
+        int day = 256-days;
+        return day+"-09-"+year;
+    }
     public static int migratoryBirds(List<Integer> arr) {
 
         HashMap<Integer, Integer> map = new HashMap<>();
