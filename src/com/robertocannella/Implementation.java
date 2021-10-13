@@ -1,6 +1,7 @@
 package com.robertocannella;
 
 import jdk.swing.interop.SwingInterOpUtils;
+import org.w3c.dom.ls.LSOutput;
 
 import java.security.Key;
 import java.text.ParseException;
@@ -8,7 +9,20 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Implementation {
-    public static String dayOfProgrammer(int year) throws ParseException {
+    public static void bonAppetit(List<Integer> bill, int k, int b) {
+        int sum=0;
+
+        for (int i = 0; i < bill.size(); i++) {
+            if (i==k) continue;
+            sum+=bill.get(i);
+        }
+        System.out.println("Sum: " + sum);
+        int split = sum/2;
+        System.out.println("half: " + split);
+        System.out.println((b == split) ? "BonAppetit" : b -split);
+
+    }
+    public static String dayOfProgrammer(int year){
         int days = 243;
         if (year >= 1700 && year <= 1917) {
             //System.out.println("Julian Calendar");
