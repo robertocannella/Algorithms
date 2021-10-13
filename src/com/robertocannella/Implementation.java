@@ -16,11 +16,8 @@ public class Implementation {
             if (i==k) continue;
             sum+=bill.get(i);
         }
-        System.out.println("Sum: " + sum);
         int split = sum/2;
-        System.out.println("half: " + split);
-        System.out.println((b == split) ? "BonAppetit" : b -split);
-
+        System.out.println((b == split) ? "Bon Appetit" : b -split);
     }
     public static String dayOfProgrammer(int year){
         int days = 243;
