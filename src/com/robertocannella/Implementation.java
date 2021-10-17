@@ -1,14 +1,25 @@
 package com.robertocannella;
 
-import jdk.swing.interop.SwingInterOpUtils;
-import org.w3c.dom.ls.LSOutput;
 
-import java.security.Key;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Implementation {
+    public static int sockMerchant(int n, List<Integer> ar) {
+        // Write your code here
+        Set<Integer> set = new HashSet<>();
+        int count = 0;
+        for(int sock : ar) {
+            if (set.contains(sock)) {
+                count++;
+                set.remove(sock);
+            }
+            else
+                set.add(sock);
+        }
+//        System.out.println(set);
+//        System.out.println(ar);
+        return count;
+    }
     public static void bonAppetit(List<Integer> bill, int k, int b) {
         int sum=0;
 

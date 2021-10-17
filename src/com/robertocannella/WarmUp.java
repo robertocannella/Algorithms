@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class WarmUp {
+
     public static long aVeryBigSum(List<Long> ar) {
         long sum =0;
         for (Long aLong : ar) {
@@ -14,7 +15,6 @@ public class WarmUp {
         }
         return sum;
     }
-
     public static String timeConversion(String s) {
 
             //String input = "23/12/2014 10:22:12 PM";
