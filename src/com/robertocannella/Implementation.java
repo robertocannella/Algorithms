@@ -1,9 +1,29 @@
 package com.robertocannella;
 
-
+// HackerRank Algorithm Exercises
+import java.sql.ClientInfoStatus;
 import java.util.*;
 
 public class Implementation {
+    // reetCode swap linklist nodes
+    public static class ListNode {
+              int val;
+              ListNode next;
+              ListNode() {}
+              ListNode(int val) { this.val = val; }
+              ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+          }
+    public static ListNode swapPairs (ListNode head){
+        if(head == null || head.next == null)
+         return head;
+
+        ListNode swap = head.next;
+        head.next = swapPairs(head.next.next);
+        swap.next = head;
+        return swap;
+
+    }
+    // hackerRank
     public static int sockMerchant(int n, List<Integer> ar) {
         // Write your code here
         Set<Integer> set = new HashSet<>();

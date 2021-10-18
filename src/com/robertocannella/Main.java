@@ -5,16 +5,13 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args)  {
-        Random r = new Random();
-        int n = 10;
-        List<Integer> ar = new ArrayList<>();
-        while (n > 0) {
-            ar.add(r.nextInt(10));
-            n--;
-        }
+        Implementation.ListNode list = new Implementation.ListNode();
+        list.val = 1;
+        list.next = new Implementation.ListNode(2);
+//        list.next.next = new Implementation.ListNode(3);
+//        list.next.next.next =new Implementation.ListNode(4);
 
-        int pairs =  Implementation.sockMerchant(n, ar);
-        System.out.println(pairs);
-
+        Implementation.ListNode rest = Implementation.swapPairs(list);
+        System.out.println(rest);
     }
 }
