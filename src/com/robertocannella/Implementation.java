@@ -5,7 +5,8 @@ import java.sql.ClientInfoStatus;
 import java.util.*;
 
 public class Implementation {
-    // reetCode swap linklist nodes
+
+    // leetCode swap linklist nodes
     public static class ListNode {
               int val;
               ListNode next;
@@ -24,6 +25,17 @@ public class Implementation {
 
     }
     // hackerRank
+    public static int pageCount(int n, int p) {
+        // Write your code here
+        if(n%2 == 0 )
+            n++;
+
+        int fromBack = (n-p)/2;
+        int fromFront = p/2;
+
+        System.out.println(p/2);
+        return Math.min(fromBack,fromFront);
+    }
     public static int sockMerchant(int n, List<Integer> ar) {
         // Write your code here
         Set<Integer> set = new HashSet<>();
