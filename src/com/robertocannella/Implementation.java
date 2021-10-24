@@ -25,6 +25,20 @@ public class Implementation {
 
     }
     // hackerRank
+    public static int maxCombo(int[] a, int[]b, int max){
+
+
+        int ans = -1;
+        for (int j : a) {
+            for (int k : b) {
+                int sum = j + k;
+                if (sum > max) continue;
+                ans = Math.max(ans, sum);
+            }
+        }
+
+        return ans;
+    }
     public static int countingValleys(int steps, String path) {
         // Write your code here
         int count = 0;
