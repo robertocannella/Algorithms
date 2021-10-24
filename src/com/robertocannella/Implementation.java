@@ -25,6 +25,20 @@ public class Implementation {
 
     }
     // hackerRank
+    public static String catAndMouse(int x, int y, int z) {
+        int catA = Math.abs(x-z);
+        int catB = Math.abs(y-z);
+
+        if (catB > catA)
+            return "Cat A";
+
+        if (catA > catB)
+            return "Cat B";
+
+        else
+            return "Mouse C";
+
+    }
     public static int maxCombo(int[] a, int[]b, int max){
 
 
