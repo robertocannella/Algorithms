@@ -5,7 +5,9 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args)  {
-        int pageCount = Implementation.pageCount(6,2);
+        int steps = 8;
+        String path =  "UDDDUDUUUUDDDDUUU";
+        int pageCount = Implementation.countingValleys(steps,path);
         System.out.println("----------");
         System.out.println(pageCount);
     }

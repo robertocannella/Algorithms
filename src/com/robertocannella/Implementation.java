@@ -25,6 +25,22 @@ public class Implementation {
 
     }
     // hackerRank
+    public static int countingValleys(int steps, String path) {
+        // Write your code here
+        int count = 0;
+        int height = 0;
+
+        for (char ch : path.toCharArray()) {
+            int temp = height;
+            height += (ch == 'U') ? 1: -1;
+            System.out.println(ch);
+            System.out.println("temp " + temp);
+            System.out.println("height " + height);
+            if (temp < 0 && height >= 0)
+                count++;
+        }
+        return count;
+    }
     public static int pageCount(int n, int p) {
         // Write your code here
         if(n%2 == 0 )
